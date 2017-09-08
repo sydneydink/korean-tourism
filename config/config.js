@@ -2,7 +2,7 @@
 
 module.exports = {
   // Mongo database url
-  mongodb: 'mongodb://localhost/express-boiler',
+  mongodb: 'mongodb://localhost/hpb-ar',
 
   secret: 'SECRETAPP'
 };

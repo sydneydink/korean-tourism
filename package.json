@@ -1,5 +1,5 @@
 {
-  "name": "express-boiler",
+  "name": "hpb-ar",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -21,6 +21,7 @@
     "jsonwebtoken": "^7.3.0",
     "mongoose": "^4.9.0",
     "morgan": "~1.7.0",
+    "nodemailer": "^4.1.0",
     "nodemon": "^1.11.0",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
