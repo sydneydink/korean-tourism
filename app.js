@@ -9,6 +9,7 @@ var expressSession = require ('express-session')
 var flash = require('connect-flash');
 var mongoose = require('mongoose');
 var config = require('./config/config');
+var cors = require('cors')
 
 /*******************************/
 /******** DB & Models **********/
@@ -23,6 +24,16 @@ require('./app/models/product');
 /*******************************/
 var app = express();
 
+// cross origin middleware
+var allowCrossDomain = function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', "*");
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+
+    next();
+}
+
+
 // initialize passort
 app.use(expressSession({
   secret: config.secret, 
@@ -31,6 +42,8 @@ app.use(expressSession({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(cors());
+//app.use(allowCrossDomain);
 app.use(flash());
 var initPassport = require('./passport/init');
 initPassport(passport);
