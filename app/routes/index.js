@@ -25,31 +25,22 @@ router.get('/', function(req, res, next) {
 
 
 router.get('/bus', function(req,res,next){
-	/*
-	var myHeaders = new Headers();
-	myHeaders.append("AccountKey", "rye8ZK3+QHutdz5yd8JPJw==");
 
-	fetch('http://datamall2.mytransport.sg/ltaodataservice/BusArrivalv2?BusStopCode=83139',{
-		method: 'get',
-		headers: 'myHeaders',
-	}).then(function(response){
-		console.log('response is ', response)
-	}).catch(function(err){
-		console.log('err is ', err)
-	})
-	*/
-	 request
-	   .get('http://datamall2.mytransport.sg/ltaodataservice/BusArrivalv2?BusStopCode=83139')
-	   .set('AccountKey', 'rye8ZK3+QHutdz5yd8JPJw==')
-	   .set('Accept', 'application/json')
-	   .end(function(err, data){
-	     if (err || !data.ok) {
-	       console.log('Oh no! error');
-	     } else {
-	       	console.log('yay got ' + JSON.stringify(data.body));
-	     	res.json(data.body)
-	     }
-	   });
+	var BusStopCode = req.query.BusStopCode
+	console.log(BusStopCode)
+	request
+		//.get('http://datamall2.mytransport.sg/ltaodataservice/BusArrivalv2?BusStopCode=83139')
+		.get('http://datamall2.mytransport.sg/ltaodataservice/BusArrivalv2?BusStopCode='+ BusStopCode)
+		.set('AccountKey', 'rye8ZK3+QHutdz5yd8JPJw==')
+		.set('Accept', 'application/json')
+		.end(function(err, data){
+		 if (err || !data.ok) {
+		   console.log('Oh no! error');
+		 } else {
+		   	//console.log('yay got ' + JSON.stringify(data.body));
+		 	res.json(data.body)
+		 }
+	});
 
 
 	
