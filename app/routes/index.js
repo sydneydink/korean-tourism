@@ -5,10 +5,15 @@ var fetch = require('isomorphic-fetch');
 var request = require('superagent');
 
 var transporter = nodemailer.createTransport({
-  service: 'gmail',
+    host: 'mail.dinkevents.com',
+    port: 26,
+    secure: false,
+    tls: {
+        rejectUnauthorized:false
+    },
   auth: {
-    user: 'noreplydanielntda@gmail.com',
-    pass: 'Qwert123'
+    user: 'noreply@dinkevents.com',
+    pass: 'Tornado13245678'
   }
 });
 
@@ -51,7 +56,7 @@ router.post('/email', function(req,res,next){
 	console.log('req.body is ', req.body)
 
 	var mailOptions = {
-	  from: 'noreplydanielntda@gmail.com',
+	  from: 'noreply@dinkevents.com',
 	  to: req.body.emailPost,
 	  subject: 'HPB Healthy Living Recipe',
 	  text: req.body.messagePost,
