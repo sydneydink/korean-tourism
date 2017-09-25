@@ -56,7 +56,7 @@ router.post('/email', function(req,res,next){
 	console.log('req.body is ', req.body)
 
 	var mailOptions = {
-	  from: 'noreply@dinkevents.com',
+	  from: 'noreply@healthylifestyle.com',
 	  to: req.body.emailPost,
 	  subject: 'HPB Healthy Living Recipe',
 	  text: req.body.messagePost,
