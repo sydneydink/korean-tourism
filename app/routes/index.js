@@ -80,6 +80,9 @@ router.post('/email', function(req,res,next){
 	});
 
 })
+router.post('/korean-tourism-test', function(req,res,next){
+	res.json({message:JSON.stringify(req.body)})
+})
 
 router.post('/korean-tourism-email', function(req,res,next){
 
