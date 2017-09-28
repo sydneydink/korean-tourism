@@ -56,7 +56,7 @@ router.post('/email', function(req,res,next){
 	console.log('req.body is ', req.body)
 
 	var mailOptions = {
-	  from: 'noreply@healthylifestyle.com',
+	  from: 'noreply@dinkevents.com',
 	  to: req.body.emailPost,
 	  subject: 'HPB Healthy Living Recipe',
 	  text: req.body.messagePost,
@@ -81,6 +81,36 @@ router.post('/email', function(req,res,next){
 
 })
 
+router.post('/korean-tourism-email', function(req,res,next){
+
+	if(req.body.emailPost){
+		console.log('req.body is ', req.body)
+
+		var mailOptions = {
+		  from: 'noreply@dinkevents.com',
+		  to: req.body.emailPost,
+		  subject: 'HPB Healthy Living Recipe',
+		  html: `
+		  <b> Hello World </b>
+		  <div> <p> Hi Hi </p></div>
+		  <img src="http://res.cloudinary.com/d-ink/image/upload/v1506574979/xecdvlz2nmky4b0d9w2x.png" />
+		  `
+		};
+		
+		transporter.sendMail(mailOptions, function(error, info){
+		  if (error) {
+		    console.log(error);
+		  } else {
+		    console.log('Email sent: ' + info.response);
+		    res.json({status: "success"})
+		  }
+		});
+		
+	} else {
+		res.json({status:"nothing"})
+	}
+
+})
 // Catch all for 404 error.
 router.use(function(req,res,next){
 	console.log ('call error');
