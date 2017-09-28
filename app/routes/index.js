@@ -92,8 +92,8 @@ router.post('/korean-tourism-email', function(req,res,next){
 		  subject: 'HPB Healthy Living Recipe',
 		  html: `
 		  <b> Hello World </b>
-		  <div> <p> Hi Hi </p></div>
-		  <img src="http://res.cloudinary.com/d-ink/image/upload/v1506574979/xecdvlz2nmky4b0d9w2x.png" />
+		  <div> <p> Hi Hi ${req.body.emailPost}</p></div>
+		  <img src=${req.body.imgPost} />
 		  `
 		};
 		
@@ -105,7 +105,7 @@ router.post('/korean-tourism-email', function(req,res,next){
 		    res.json({status: "success"})
 		  }
 		});
-		
+
 	} else {
 		res.json({status:"nothing"})
 	}
