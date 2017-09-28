@@ -92,7 +92,7 @@ router.post('/korean-tourism-email', function(req,res,next){
 		var mailOptions = {
 		  from: 'noreply@dinkevents.com',
 		  to: req.body.emailPost,
-		  subject: 'HPB Healthy Living Recipe',
+		  subject: 'Korea Tourism',
 		  html: `
 		  <b> Hello World </b>
 		  <div> <p> Hi Hi ${req.body.emailPost}</p></div>
