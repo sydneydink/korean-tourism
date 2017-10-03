@@ -75,7 +75,7 @@ router.post('/korean-tourism-email', function(req,res,next){
 			<div class="container" style="max-width:800px">
 
 				<div class="main-img">
-					<img src="http://localhost:3020/image/korea-man.jpg" />
+					<img src="http://52.220.58.82:3020/image/korea-man.jpg" />
 				</div>
 				
 				<div class="terms" style="padding:0 20px">
