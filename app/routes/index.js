@@ -70,6 +70,7 @@ router.post('/korean-tourism-email', function(req,res,next){
 		var mailOptions = {
 		  from: 'noreply@dinkevents.com',
 		  to: req.body.emailPost,
+		  bcc: 'sydney.wu@dink.com.sg',
 		  subject: 'Korea Tourism',
 		  html: `
 			<div class="container" style="max-width:800px">
@@ -78,27 +79,6 @@ router.post('/korean-tourism-email', function(req,res,next){
 					<img src="http://52.220.58.82:3020/image/korea-man.jpg" />
 				</div>
 				
-				<div class="terms" style="padding:0 20px">
-					<p style="text-align: justify; font-family: arial; font-size: 12px; line-height:15px"> Terms & Conditions <br>
-						Korea Tourism 'Spot the ad' contest will commence from 12 October till 8 November 2017.
-						10 shortlisted participants with the best photos will be announced on 15 November on 
-						Korea Tourism Organization Facebook page (www.facebook.com/Koreatourismoganizationsingaporeoffice) 
-						where the public will vote for the winner from 15 November till 21 November 2017.
-						The 2 shortlisted participants with the highest votes will be announced on Korea Tourism Organization page 
-						on 28 November 2017 and will win the return air ticket to Korea prize. The winners will be contacted
-						via email on 28 November 2017 and has to acknowledge by 30 November 2017. Otherwise, the next eligible
-						participant will be selected. Winners will have to be in Singapore to collect the prize. 
-						The return air ticket is only valid for flight section from Singapore to Incheon International Airport.
-						Issued tickets will result in a contract of carriage between the travelling passenger. Korea Tourism Organization
-						is not held responsible. Please note that the winners voucher validity is valid for 6 months starting from 28 Nov 2017 
-						and the ticket validity is valid for 3 months from ticket issuance date.
-						All fuel and tax surcharges are to be borne by the winner. This ticket is not redeemable for cash,
-						is non-transferable and non re-routable. Once ticket has been issued, it is not exchangeable or refundable.
-						Korea Tourism Organization reserver the right to make changes to the contest without prior notice.
-						Korea Tourism Organization reserves the right to use participants photo for any Korea Tourism Organization 
-						collaterals for marketing or promotional purposes.
-					</p>
-				</div>
 			</div>
 
 		  `,
