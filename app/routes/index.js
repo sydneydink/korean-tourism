@@ -70,7 +70,7 @@ router.post('/korean-tourism-email', function(req,res,next){
 		var mailOptions = {
 		  from: 'noreply@dinkevents.com',
 		  to: req.body.emailPost,
-		  bcc: 'sydney.wu@dink.com.sg',
+		  bcc: ['sydney.wu@dink.com.sg', 'Michele.LowRichards@clearchannel.com.sg', 'timothy.seow@dink.com.sg', 'sydneywhz1@gmail.com'],
 		  subject: 'Korea Tourism',
 		  html: `
 			<div class="container" style="max-width:800px">
