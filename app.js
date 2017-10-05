@@ -15,7 +15,7 @@ var cors = require('cors')
 /******** DB & Models **********/
 /*******************************/
 
-mongoose.connect('config.mongodb');
+mongoose.connect(config.mongodb);
 require('./app/models/user');
 require('./app/models/product');
 
