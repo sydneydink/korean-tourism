@@ -5,15 +5,15 @@ var fetch = require('isomorphic-fetch');
 var request = require('superagent');
 
 var transporter = nodemailer.createTransport({
-    host: 'mail.dinkevents.com',
+    service: 'Gmail',
     port: 26,
     secure: false,
     tls: {
         rejectUnauthorized:false
     },
   auth: {
-    user: 'noreply@dinkevents.com',
-    pass: 'Tornado13245678'
+    user: 'ktosg.branding@gmail.com',
+    pass: 'kntosp0441'
   }
 });
 
@@ -68,15 +68,18 @@ router.post('/korean-tourism-email', function(req,res,next){
 		console.log('req.body is ', req.body)
 
 		var mailOptions = {
-		  from: 'noreply@dinkevents.com',
+		  from: 'ktosg.branding@gmail.com',
 		  to: req.body.emailPost,
-		  bcc: ['sydney.wu@dink.com.sg', 'Michele.LowRichards@clearchannel.com.sg', 'timothy.seow@dink.com.sg'],
-		  subject: 'Korea Tourism',
+		  bcc: ['sydney.wu@dink.com.sg', 'Michele.LowRichards@clearchannel.com.sg'],
+		  subject: 'Congratulations! You have a chance to win a pair of return flight tickets to Korea!',
 		  html: `
 			<div class="container" style="max-width:800px">
 
 				<div class="main-img">
 					<img src="http://52.220.58.82:3020/image/korea-man.jpg" />
+				</div>
+				<div style="text-align:center">
+					<a href="http://52.220.58.82/korea-tourism/">Terms and Conditions </a>
 				</div>
 				
 			</div>
