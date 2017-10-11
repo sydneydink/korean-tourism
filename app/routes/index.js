@@ -6,8 +6,6 @@ var request = require('superagent');
 
 var transporter = nodemailer.createTransport({
     service: 'Gmail',
-    port: 26,
-    secure: false,
     tls: {
         rejectUnauthorized:false
     },
